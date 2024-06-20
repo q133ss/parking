@@ -26,6 +26,10 @@
                                         <label for="floatingInput">Email</label>
                                     </div>
                                     <div class="form-floating mb-3">
+                                        <input type="name" value="{{old('car_number')}}" name="car_number" class="form-control" id="carNumber" placeholder="А111АА11">
+                                        <label for="floatingInput">Номер авто</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
                                         <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                                         <label for="floatingPassword">Пароль</label>
                                     </div>

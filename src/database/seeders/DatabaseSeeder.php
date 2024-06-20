@@ -25,17 +25,19 @@ class DatabaseSeeder extends Seeder
         }
 
         User::create([
-            'name'     => 'Пользователь',
-            'email'    => 'user@email.net',
-            'password' => Hash::make('password'),
-            'role_id'  => Role::where('slug', 'user')->pluck('id')->first()
+            'name'       => 'Пользователь',
+            'email'      => 'user@email.net',
+            'password'   => Hash::make('password'),
+            'car_number' => 'A111AA77',
+            'role_id'    => Role::where('slug', 'user')->pluck('id')->first()
         ]);
 
         User::create([
-            'name'     => 'Админ',
-            'email'    => 'admin@email.net',
-            'password' => Hash::make('password'),
-            'role_id'  => Role::where('slug', 'admin')->pluck('id')->first()
+            'name'       => 'Админ',
+            'email'      => 'admin@email.net',
+            'password'   => Hash::make('password'),
+            'car_number' => 'A111AA11',
+            'role_id'    => Role::where('slug', 'admin')->pluck('id')->first()
         ]);
     }
 }

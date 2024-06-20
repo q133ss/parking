@@ -22,9 +22,10 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'     => 'required|string',
-            'email'    => 'required|email|unique:users,email',
-            'password' => 'required|string|min:8|confirmed'
+            'name'       => 'required|string',
+            'email'      => 'required|email|unique:users,email',
+            'car_number' => 'required|string|regex:/^[А-Я]{1}[0-9]{3}[А-Я]{2}[0-9]{2,3}$/u',
+            'password'   => 'required|string|min:8|confirmed'
         ];
     }
 
@@ -37,6 +38,10 @@ class RegisterRequest extends FormRequest
             'email.required' => 'Введите email',
             'email.email'    => 'Неверный формат email',
             'email.unique'   => 'Пользователь с таким email уже существует',
+
+            'car_number.required' => 'Введите номер авто',
+            'car_number.string'   => 'Номер авто должен быть строкой',
+            'car_number.regex'    => 'Неверный формат номера авто',
 
             'password.required'  => 'Введите пароль',
             'password.string'    => 'Пароль должен быть строкой',

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->foreignId('role_id');
             $table->boolean('is_active')->default(false);
+            $table->string('car_number');
         });
     }
 
@@ -25,6 +26,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('role_id');
             $table->dropColumn('is_pay');
+            $table->dropColumn('car_number');
         });
     }
 };
