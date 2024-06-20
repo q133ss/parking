@@ -56,3 +56,23 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+            // Примените маску к полю ввода номера автомобиля
+            Inputmask({
+                mask: "Z999ZZ99[9]",
+                definitions: {
+                    'Z': {
+                        validator: "[АВЕКМНОРСТУХавекмнорстух]",
+                        casing: "upper"
+                    },
+                    '9': {
+                        validator: "[0-9]"
+                    }
+                },
+                autoUnmask: true // Это удалит маску при отправке формы
+            }).mask("#carNumber");
+        });
+    </script>
+@endsection

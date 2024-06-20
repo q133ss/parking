@@ -18,5 +18,9 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/lk', [\App\Http\Controllers\LkController::class, 'index'])->name('lk.index');
 });
 
+Route::group(['middleware' => ['auth', 'is.admin']], function (){
+    Route::get('/admin', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.index');
+});
+
 
 Route::get('/logout', [\App\Http\Controllers\Auth\LogoutController::class, 'logout']);

@@ -17,6 +17,10 @@
                     <a class="btn btn-danger" href="#">Отменить подписку</a>
                     <a class="btn btn-secondary" href="/">На главную</a>
                 </div>
+                @if(Auth()->user()->isAdmin())
+                <hr>
+                <a class="btn btn-info w-100" href="{{route('admin.index')}}">Панель администратора</a>
+                @endif
             </div>
         </div>
     </div>
