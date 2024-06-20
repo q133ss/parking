@@ -13,6 +13,9 @@
 ```bash
 docker exec -it app_parking composer install
 ```
+```bash
+docker-compose exec app npm install
+```
 ### Предварительные требования
 
 - Docker
